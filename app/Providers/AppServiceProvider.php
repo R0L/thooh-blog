@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\StreamHandler;
@@ -55,6 +56,8 @@ class AppServiceProvider extends ServiceProvider
                 $log->addInfo($sql);
             });
         }
+
+        Schema::defaultStringLength(191);
     }
 
     /**
