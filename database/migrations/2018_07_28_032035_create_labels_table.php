@@ -16,8 +16,8 @@ class CreateLabelsTable extends Migration
         Schema::create('labels', function(Blueprint $table){
             $table->unsignedInteger('id', true)->comment('标签ID');
             $table->string('name')->unique('UK_labels_title')->default('')->comment('标签名称');
-            $table->timestamp('create_time')->default('00-00-00 00:00:00')->comment('创建时间');
-            $table->timestamp('update_time')->default('00-00-00 00:00:00')->comment('更新时间');
+            $table->timestamp('create_time')->nullable()->comment('创建时间');
+            $table->timestamp('update_time')->nullable()->comment('更新时间');
         });
     }
 
