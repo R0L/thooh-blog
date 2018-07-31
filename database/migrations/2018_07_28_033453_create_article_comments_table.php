@@ -19,7 +19,7 @@ class CreateArticleCommentsTable extends Migration
             $table->unsignedInteger('user_id')->default(0)->comment('用户ID');
             $table->unsignedInteger('comment_id')->default(0)->comment('评论ID');
             $table->string('content')->default('')->comment('评论内容');
-            $table->timestamp('create_time')->comment('创建时间');
+            $table->timestamp('create_time')->default('00-00-00 00:00:00')->comment('创建时间');
             $table->index(['article_id', 'user_id', 'comment_id'], 'INX_clicks_aid_uid_cid');
         });
     }

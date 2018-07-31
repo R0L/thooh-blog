@@ -18,8 +18,8 @@ class CreateLabelRelationsTable extends Migration
             $table->unsignedInteger('label_id')->default(0)->comment('标签ID');
             $table->unsignedTinyInteger('type')->default(0)->comment('标签类型：0 文章；1 用户；默认 0');
             $table->unsignedInteger('relation_id')->default(0)->comment('关联ID');
-            $table->timestamp('create_time')->comment('创建时间');
-            $table->timestamp('update_time')->comment('更新时间');
+            $table->timestamp('create_time')->default('00-00-00 00:00:00')->comment('创建时间');
+            $table->timestamp('update_time')->default('00-00-00 00:00:00')->comment('更新时间');
             $table->unique(['type', 'label_id', 'relation_id'], 'UK_relations_type_lid_rid');
         });
     }

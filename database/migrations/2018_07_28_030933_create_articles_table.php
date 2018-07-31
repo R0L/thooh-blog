@@ -21,8 +21,8 @@ INX_articles_uid')->default(0)->comment('用户Id');
             $table->string('image_url')->comment('文章图片url');
             $table->text('content')->comment('文章内容');
             $table->unsignedInteger('source_id')->comment('来源ID');
-            $table->timestamp('create_time')->comment('创建时间');
-            $table->timestamp('update_time')->comment('更新时间');
+            $table->timestamp('create_time')->default('00-00-00 00:00:00')->comment('创建时间');
+            $table->timestamp('update_time')->default('00-00-00 00:00:00')->comment('更新时间');
         });
     }
 

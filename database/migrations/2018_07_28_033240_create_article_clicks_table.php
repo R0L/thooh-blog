@@ -17,7 +17,7 @@ class CreateArticleClicksTable extends Migration
             $table->unsignedInteger('id', true)->comment('文章点击ID');
             $table->unsignedInteger('article_id')->default(0)->comment('文章ID');
             $table->unsignedInteger('user_id')->default(0)->comment('用户ID');
-            $table->timestamp('create_time')->comment('创建时间');
+            $table->timestamp('create_time')->default('00-00-00 00:00:00')->comment('创建时间');
             $table->unique(['article_id', 'user_id', 'create_time'], 'UK_clicks_aid_uid_ct');
         });
     }
