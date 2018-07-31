@@ -17,8 +17,8 @@ class CreateSourcesTable extends Migration
             $table->unsignedInteger('id', true)->comment('来源ID');
             $table->string('name')->default('')->unique('UK_sources_name')->comment('来源名称');
             $table->text('info')->comment('来源名称');
-            $table->timestamp('create_time')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('创建时间');
-            $table->timestamp('update_time')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('更新时间');
+            $table->timestamp('create_time')->comment('创建时间');
+            $table->timestamp('update_time')->comment('更新时间');
         });
     }
 
